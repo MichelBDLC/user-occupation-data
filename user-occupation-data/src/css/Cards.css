@@ -1,0 +1,31 @@
+.cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 17px;
+  }
+    
+  .card {
+    border-bottom: solid 2px black;
+    border-top: solid 2px black;
+    border-left: solid 2px black;
+    border-right: solid 2px black;
+    border-radius: 17px;
+    background-color: whitesmoke;
+    display: grid;
+    justify-content: center;
+    max-width: 340px;
+  }
+  
+  p {
+    color: grey;
+    display: flex;
+  }
+  
+  strong {
+    display: flex;
+  }
+  
+  img {
+    border-radius: 31px;
+  }
+    

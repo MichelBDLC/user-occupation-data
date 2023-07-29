@@ -1,0 +1,43 @@
+.App-header {
+  background-color: lightgrey;
+  display: flex;
+  flex-direction: column;
+  color: black
+}
+
+h3 {
+  margin-left: 30px;
+  border-bottom: solid 1px whitesmoke;
+  padding-bottom: 20px;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+select {
+  margin-top: 20px;
+  margin-left: 10px;
+  border-color: white;
+}
+
+select:focus-visible, select:focus {
+  outline-style: solid;
+  outline-color: white;
+  outline-width: 1px;
+}
+
+label {
+  margin-left: 30px;
+}
+
+.sorting {
+  display: inline-block;
+  font-family: Times New Roman;
+}
+
+
+
+
+
+
+
+
+
