@@ -5,14 +5,14 @@ import axios from 'axios';
 
 const LazyCards = lazy(() => import('./components/Cards'));
 
-const API_KEY = process.env.REACT_APP_API_KEY;
+const REACT_APP_API_KEY = process.env.REACT_APP_API_KEY;
 const randomUsersApi = 'https://randomuser.me/api/?results=300'; 
 
 const config = {
   method: 'get', 
   url: 'https://api.airtable.com/v0/appBTaX8XIvvr6zEC/Users?',
   headers: { 
-    'Authorization': `Bearer ${API_KEY}`, 
+    'Authorization': `Bearer ${REACT_APP_API_KEY}`, 
   },
 };
 
