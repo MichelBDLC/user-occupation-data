@@ -1,7 +1,9 @@
 .cards {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 17px;
+    margin-top: 50px;
+    margin-left: 30px;
   }
     
   .card {
@@ -13,19 +15,22 @@
     background-color: whitesmoke;
     display: grid;
     justify-content: center;
-    max-width: 340px;
+    max-width: 240px;
   }
   
   p {
     color: grey;
-    display: flex;
+    float: inline-end;
+    /* display: flex; */
   }
   
   strong {
     display: flex;
+    float: right;
   }
   
   img {
     border-radius: 31px;
+    float: left;
   }
     
