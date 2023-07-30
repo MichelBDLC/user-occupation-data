@@ -7,6 +7,4 @@
 - Can be sorted by name in ascending or descending order.
 - minimalist css design
 
-  View site deployed at: https://64c5a320f4454932be69a829--occupationdata.netlify.app
-
 
