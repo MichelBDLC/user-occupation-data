@@ -68,7 +68,7 @@ function App() {
           </select>
         </div>
         <div className='div'/>
-        <LazyCards userData={userData} sortedUserData={sortedUserData} avatarImg={avatarImg} sorting={sorting} />
+        <LazyCards sortedUserData={sortedUserData} avatarImg={avatarImg} />
       </main>
     </div>
   );
