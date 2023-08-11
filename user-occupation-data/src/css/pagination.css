@@ -1,0 +1,24 @@
+li {
+    list-style: none;
+}
+
+ul {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+button {
+    border: none;
+    background-color: rgb(73, 73, 73);
+    color: white;
+}
+
+nav {
+    margin-top: 60px;
+}
+
+button:hover {
+    background-color: white;
+    color: black;
+}
