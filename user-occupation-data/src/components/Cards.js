@@ -8,7 +8,7 @@ export default function Cards(props) {
                 props.currentPosts.map((user, index) => { 
                     return (
                         <div key={user.id} className='card'>
-                            {/* <img src={props.avatarImg[index]} alt='avatar-img'/> */}
+                            <div className='userPhoto'> {user.fields.Name.charAt(0).toUpperCase()} </div>
                             <strong> {user.fields.Name} </strong>
                             <p> {user.fields.occupation} </p>
                         </div>
