@@ -1,6 +1,7 @@
 import './css/App.css';
 import { useEffect, useState, lazy } from 'react';
 import axios from 'axios';
+import logs from './assets/logs.json';
 
 const LazyCards = lazy(() => import('./components/Cards'));
 const LazyPages = lazy(() => import('./components/Pagination'));
@@ -20,6 +21,7 @@ function App() {
   const [sorting, setSorting] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage, setPostsPerPage] = useState(20);
+  const [loading, setLoading] = useState(null); //a must
   
   useEffect(() => {
     Promise.all([
@@ -32,6 +34,37 @@ function App() {
       console.error('Failed to fetch data:', error.message);
     }) 
   }, []);
+
+  //console.log(userData)
+
+  function calculateTotals(logs) {
+    const result = [];
+
+    for (let log of logs) {
+      const { user_id, type, revenue, time } = log;
+
+      let userObj = result.find(item => item.userId === user_id);
+
+      if (!userObj) {
+        userObj = { userId: user_id, impression: 0, conversion: 0 };
+        result.push(userObj);
+      }
+
+      userObj[type] = (userObj[type] || 0) + revenue;
+
+      // if (!result[user_id]) {
+      //   result[user_id] = { userId: user_id, impression: 0, conversion: 0 };
+      // }
+
+      // result[user_id][type] += revenue;
+    }
+
+    return result;
+  }
+
+  const totalsRev = calculateTotals(logs);
+
+  //console.log(totalsRev)
 
   function handleSorting(event) {
     setSorting(event.target.value)
@@ -71,9 +104,7 @@ function App() {
           </select>
         </div>
         <div className='div'/>
-        <LazyCards currentPosts={currentPosts}
-        //sortedUserData={sortedUserData} 
-        />
+        <LazyCards currentPosts={currentPosts} totalsRev={totalsRev} />
         <br />
         <LazyPages postsPerPage={postsPerPage} userData={userData} paginate={paginate} />
       </main>
