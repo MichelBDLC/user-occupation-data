@@ -35,8 +35,6 @@ function App() {
     }) 
   }, []);
 
-  //console.log(userData)
-
   function calculateTotals(logs) {
     const result = [];
 
@@ -46,17 +44,14 @@ function App() {
       let userObj = result.find(item => item.userId === user_id);
 
       if (!userObj) {
-        userObj = { userId: user_id, impression: 0, conversion: 0 };
+        userObj = { userId: user_id, impression: 0, conversion: 0, times: [] };
         result.push(userObj);
       }
 
-      userObj[type] = (userObj[type] || 0) + revenue;
+      userObj[type] = userObj[type] + revenue; 
 
-      // if (!result[user_id]) {
-      //   result[user_id] = { userId: user_id, impression: 0, conversion: 0 };
-      // }
+      userObj.times.push(time);
 
-      // result[user_id][type] += revenue;
     }
 
     return result;
@@ -64,7 +59,13 @@ function App() {
 
   const totalsRev = calculateTotals(logs);
 
-  //console.log(totalsRev)
+  //console.log(totalsRev[0].times[0].split(' ')[0])
+  //const dated = new Date(totalsRev[0].times[0].split(' ')[0]);
+  //console.log(dated) Thu Apr 18 2013 17:00:00 GMT-0700 (Pacific Daylight Time)
+  //.split('-'));
+  //.split("-").join(""))
+  console.log(totalsRev)
+  
 
   function handleSorting(event) {
     setSorting(event.target.value)

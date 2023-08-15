@@ -1,5 +1,6 @@
 import '../css/Cards.css';
-import React from 'react';
+//additional features, ability to click on chart and see bigger
+//don't forget sorting features
 
 export default function Cards(props) {
 
