@@ -6,6 +6,8 @@ import logs from './assets/logs.json';
 const LazyCards = lazy(() => import('./components/Cards'));
 const LazyPages = lazy(() => import('./components/Pagination'));
 
+//add an explanation to the app as some sort of subheading above sorting 
+
 const REACT_APP_API_KEY = process.env.REACT_APP_API_KEY;
 
 const config = {
@@ -44,13 +46,20 @@ function App() {
       let userObj = result.find(item => item.userId === user_id);
 
       if (!userObj) {
-        userObj = { userId: user_id, impression: 0, conversion: 0, times: [] };
+        userObj = { userId: user_id, impression: 0, conversion: 0, revenues: [] };
         result.push(userObj);
       }
 
-      userObj[type] = userObj[type] + revenue; 
+      userObj[type] += revenue; 
 
-      userObj.times.push(time);
+      //userObj.times.push(time);
+
+      let revenueEntry = userObj.revenues.find(entry => entry.time === time);
+      if (!revenueEntry) {
+        revenueEntry = { time: time, revenue: 0 };
+        userObj.revenues.push(revenueEntry);
+      }
+      revenueEntry.revenue += revenue;
 
     }
 
@@ -64,8 +73,7 @@ function App() {
   //console.log(dated) Thu Apr 18 2013 17:00:00 GMT-0700 (Pacific Daylight Time)
   //.split('-'));
   //.split("-").join(""))
-  console.log(totalsRev)
-  
+  //console.log(totalsRev)
 
   function handleSorting(event) {
     setSorting(event.target.value)
