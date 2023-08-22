@@ -33,6 +33,13 @@ label {
   font-family: Times New Roman;
 }
 
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+}
+
 
 
 

@@ -1,8 +1,8 @@
 import '../css/Cards.css';
-//import LineGraph from './LineGraph';
 import { lazy } from 'react';
 //additional features, ability to click on chart and see bigger
-//don't forget sorting features
+//don't forget sorting features, sort for convresion higher to lowest 
+//card change on hover
 
 const LazyGraph = lazy(() => import('./LineGraph'));
 
@@ -15,7 +15,7 @@ export default function Cards(props) {
             userId: user.fields.id,
             impression: Math.round(matchedUser.impression),
             conversion: Math.round(matchedUser.conversion),
-            revenues: matchedUser.revenues || [] //[] optional 
+            revenues: matchedUser.revenues
         };
     });
 
@@ -37,7 +37,7 @@ export default function Cards(props) {
                                 <p>Impressions</p>
                                 {user.conversion.toLocaleString()}
                                 <p>Conversions</p>
-                                {Math.round(user.impression + user.conversion).toLocaleString()}
+                                <strong className='total'>{Math.round(user.impression + user.conversion).toLocaleString()}</strong>
                             </div>
                             <LazyGraph revenues={user.revenues} />
                         </div>

@@ -1,12 +1,11 @@
 import './css/App.css';
 import { useEffect, useState, lazy } from 'react';
+import { ClipLoader } from 'react-spinners';
 import axios from 'axios';
 import logs from './assets/logs.json';
 
 const LazyCards = lazy(() => import('./components/Cards'));
 const LazyPages = lazy(() => import('./components/Pagination'));
-
-//add an explanation to the app as some sort of subheading above sorting 
 
 const REACT_APP_API_KEY = process.env.REACT_APP_API_KEY;
 
@@ -22,22 +21,25 @@ function App() {
   const [userData, setUserData] = useState([]); 
   const [sorting, setSorting] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
-  const [postsPerPage, setPostsPerPage] = useState(20);
-  const [loading, setLoading] = useState(null); //a must
+  const [postsPerPage, setPostsPerPage] = useState(18);
+  const [loading, setLoading] = useState(true); 
   
   useEffect(() => {
-    Promise.all([
-      axios.request(config),
-    ])
-    .then(([userDataResponse]) => {
+    setLoading(true)
+    axios.request(config) 
+    .then((userDataResponse) => {
       setUserData(userDataResponse.data.records); 
     })
     .catch((error) => {
       console.error('Failed to fetch data:', error.message);
+    })
+    .finally(() => {
+      setLoading(false);
     }) 
   }, []);
 
   function calculateTotals(logs) {
+  
     const result = [];
 
     for (let log of logs) {
@@ -52,28 +54,17 @@ function App() {
 
       userObj[type] += revenue; 
 
-      //userObj.times.push(time);
-
       let revenueEntry = userObj.revenues.find(entry => entry.time === time);
       if (!revenueEntry) {
         revenueEntry = { time: time, revenue: 0 };
         userObj.revenues.push(revenueEntry);
       }
       revenueEntry.revenue += revenue;
-
     }
-
     return result;
   }
 
   const totalsRev = calculateTotals(logs);
-
-  //console.log(totalsRev[0].times[0].split(' ')[0])
-  //const dated = new Date(totalsRev[0].times[0].split(' ')[0]);
-  //console.log(dated) Thu Apr 18 2013 17:00:00 GMT-0700 (Pacific Daylight Time)
-  //.split('-'));
-  //.split("-").join(""))
-  //console.log(totalsRev)
 
   function handleSorting(event) {
     setSorting(event.target.value)
@@ -113,9 +104,15 @@ function App() {
           </select>
         </div>
         <div className='div'/>
+        {loading ? (<div className='loader'>
+          <ClipLoader loading={loading} size={77} />
+          </div>) : (
+          <>
         <LazyCards currentPosts={currentPosts} totalsRev={totalsRev} />
         <br />
         <LazyPages postsPerPage={postsPerPage} userData={userData} paginate={paginate} />
+          </>
+        )}
       </main>
     </div>
   );

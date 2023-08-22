@@ -1,6 +1,6 @@
 .cards {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 17px;
     margin-top: 50px;
     margin-left: 30px;
@@ -13,6 +13,8 @@
     border-right: solid 2px black;
     border-radius: 17px;
     background-color: whitesmoke;
+    height: 240px;
+    width: 360px;
     /* display: grid; */
     /* justify-content: center; */
     /* max-width: 240px; */
@@ -64,10 +66,18 @@
     display: grid;
     margin-right: 10px;
     height: 47px;
+    justify-items: center;
   }
 
   .revenues p {
     font-size: smaller;
+    margin-top: 2px;
+  }
+
+  .total {
+    /* font-size: large; */
+    color: green;
+    
   }
 
 

@@ -15,7 +15,7 @@ export default function Pagination(props) {
             <ul>
                 {pages.map(num => (
                     <li key={num}>
-                        <button onClick={() => props.paginate(num)}> <strong> {num} </strong> </button>
+                        <button onClick={() => props.paginate(num)}> <p> {num} </p> </button>
                      </li>
                 ))}
             </ul>

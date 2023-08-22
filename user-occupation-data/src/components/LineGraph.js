@@ -1,10 +1,6 @@
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip } from "recharts";
-import '../css/LineGraph.css';
-//import { DateTime } from "luxon";
 
 export default function LineGraph(props) {
-
-    //console.log(props.revenues)
 
     const data = props.revenues.filter(entry => entry.revenue > 0).map(entry => ({
         time: entry.time,
@@ -18,9 +14,9 @@ export default function LineGraph(props) {
 
     return (
         <div className="chart">
-        <LineChart width={200} height={150} data={data}>
-            <XAxis dataKey='time' tickFormatter={dateFormat} />
-            <YAxis />
+        <LineChart width={270} height={170} data={data}>
+            <XAxis dataKey='time' tickFormatter={dateFormat} tick={{ fontSize: 7 }} />
+            <YAxis tick={{ fontSize: 7 }} />
             <CartesianGrid strokeDasharray='3 3' />
             <Tooltip />
             <Line type='monotone' dataKey='revenue' dot={false} />
@@ -28,4 +24,3 @@ export default function LineGraph(props) {
         </div>
     )
 }
-//stroke="#8884d8"

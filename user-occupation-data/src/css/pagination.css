@@ -1,17 +1,17 @@
 li {
     list-style: none;
+    border-bottom: solid 1px black;
 }
 
 ul {
     display: flex;
-    gap: 10px;
+    gap: 20px;
     justify-content: center;
 }
 
 button {
     border: none;
-    background-color: rgb(73, 73, 73);
-    color: white;
+    background-color: lightgray;
 }
 
 nav {
@@ -19,6 +19,10 @@ nav {
 }
 
 button:hover {
-    background-color: white;
+    background-color: whitesmoke;
+}
+
+p {
+    font-size: larger;
     color: black;
 }
