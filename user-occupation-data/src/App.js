@@ -55,6 +55,7 @@ function App() {
       userObj[type] += revenue; 
 
       let revenueEntry = userObj.revenues.find(entry => entry.time === time);
+      
       if (!revenueEntry) {
         revenueEntry = { time: time, revenue: 0 };
         userObj.revenues.push(revenueEntry);
@@ -110,7 +111,7 @@ function App() {
           <>
         <LazyCards currentPosts={currentPosts} totalsRev={totalsRev} />
         <br />
-        <LazyPages postsPerPage={postsPerPage} userData={userData} paginate={paginate} />
+        <LazyPages postsPerPage={postsPerPage} userData={userData} paginate={paginate} currentPage={currentPage}/>
           </>
         )}
       </main>

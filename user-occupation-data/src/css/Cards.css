@@ -13,11 +13,15 @@
     border-right: solid 2px black;
     border-radius: 17px;
     background-color: whitesmoke;
-    height: 240px;
+    height: 249px;
     width: 360px;
     /* display: grid; */
     /* justify-content: center; */
     /* max-width: 240px; */
+  }
+
+  .card:hover {
+    background-color: rgb(61, 61, 61);
   }
   
   p {
@@ -65,19 +69,21 @@
     float: right;
     display: grid;
     margin-right: 10px;
-    height: 47px;
+    /* height: 77px; */
     justify-items: center;
+    /* gap: 10px; */
   }
 
   .revenues p {
     font-size: smaller;
-    margin-top: 2px;
+    margin-top: 4px;
+    margin-bottom: 7px;
   }
 
   .total {
     /* font-size: large; */
     color: green;
-    
+    margin-top: 40px;
   }
 
 

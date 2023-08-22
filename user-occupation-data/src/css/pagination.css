@@ -1,6 +1,9 @@
-li {
+.pageNum {
     list-style: none;
-    border-bottom: solid 1px black;
+    color: black;
+    /* display: flex; 
+    align-items: center; */
+    /* border-bottom: solid 1px black; */
 }
 
 ul {
@@ -12,6 +15,9 @@ ul {
 button {
     border: none;
     background-color: lightgray;
+    color: black;
+    /* display: flex; */
+    /* align-items: center; */
 }
 
 nav {
@@ -25,4 +31,11 @@ button:hover {
 p {
     font-size: larger;
     color: black;
+    margin: 0;
+}
+
+.prev, .next {
+    display: flex;
+    align-items: center;
+    list-style: none;
 }

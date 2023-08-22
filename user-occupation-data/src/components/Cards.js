@@ -2,7 +2,6 @@ import '../css/Cards.css';
 import { lazy } from 'react';
 //additional features, ability to click on chart and see bigger
 //don't forget sorting features, sort for convresion higher to lowest 
-//card change on hover
 
 const LazyGraph = lazy(() => import('./LineGraph'));
 
@@ -32,6 +31,7 @@ export default function Cards(props) {
                             <p className='occupation'>{props.currentPosts[index].fields.occupation}</p>
                             </div>
                             </div>
+                            <br />
                             <div className='revenues'>
                                 {user.impression.toLocaleString()}
                                 <p>Impressions</p>
