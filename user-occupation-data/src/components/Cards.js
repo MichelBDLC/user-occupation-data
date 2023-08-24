@@ -1,7 +1,5 @@
 import '../css/Cards.css';
 import { lazy } from 'react';
-//additional features, ability to click on chart and see bigger
-//don't forget sorting features, sort for convresion higher to lowest 
 
 const LazyGraph = lazy(() => import('./LineGraph'));
 

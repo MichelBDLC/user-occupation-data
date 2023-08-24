@@ -29,8 +29,13 @@ label {
 }
 
 .sorting {
-  display: inline-block;
+  /* display: inline-block; */
   font-family: Times New Roman;
+}
+
+.searchDiv {
+  display: inline-block;
+  /* float: inline-end; */
 }
 
 .loader {
@@ -39,6 +44,32 @@ label {
   align-items: center;
   height: 70vh;
 }
+
+.searchDiv {
+  /* border: none; */
+  border-bottom: solid 1px black;
+  margin-left: 22px;
+}
+
+.search {
+  border: none;
+  background-color: lightgray;
+  margin-left: 7px;
+}
+
+.search::placeholder {
+  color: black;
+  /* margin-left: 17px; */
+}
+
+/* .section {
+  align-items: baseline;
+  /* display: flex; */
+
+
+/* .search {
+  float: inline-end
+} */
 
 
 

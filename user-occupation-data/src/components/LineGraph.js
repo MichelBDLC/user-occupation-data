@@ -32,7 +32,11 @@ export default function LineGraph(props) {
                             <a className="close" onClick={close}>
                                 &times;
                             </a>
-                            <LineChart width={670} height={470} data={data}>
+                            <div className="user-info">
+                                <strong> {props.name} </strong>
+                                <p> {props.occupation} </p>
+                            </div>
+                            <LineChart width={770} height={470} data={data}>
                             <XAxis dataKey='time' tickFormatter={dateFormat} tick={{ fontSize: 17 }} />
                             <YAxis tick={{ fontSize: 17 }} />
                             <CartesianGrid strokeDasharray='3 3' />

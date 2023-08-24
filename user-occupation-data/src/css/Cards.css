@@ -23,6 +23,14 @@
   .card:hover {
     background-color: rgb(61, 61, 61);
   }
+
+  .card:hover .name-occupation, .card:hover .occupation {
+    color: white;
+  }
+
+  .card:hover .revenues, .card:hover .revenues p {
+    color: lightgrey;
+  }
   
   p {
     color: grey;
