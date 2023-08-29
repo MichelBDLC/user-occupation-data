@@ -23,7 +23,6 @@ function App() {
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage, setPostsPerPage] = useState(18);
   const [loading, setLoading] = useState(true);
-const [searchInput, setSearchInput] = useState(''); 
   
   useEffect(() => {
     setLoading(true)
@@ -87,25 +86,11 @@ const [searchInput, setSearchInput] = useState('');
   const lastPostI = currentPage * postsPerPage;
   const firstPostI = lastPostI - postsPerPage; 
   const currentPosts = sortedUserData.slice(firstPostI, lastPostI); 
-  const searchedUsers = [] //shoukd this be a state? 
 
   function paginate(pageNum) {
     setCurrentPage(pageNum)
   }
-  
-  function handleSearch(event) {
-    event.preventDefault();
-    
-    setSearchInput(event.target.value);
-    
-    for (let user of currentPosts) {
-      if (user.fields.Name.includes(searchInput))     {
-        searchedUsers.push(user);
-      }
-    }
-    return searchedUsers; 
-  } 
-
+ 
   return (
     <div className="App">
       <header className="App-header">
@@ -118,7 +103,6 @@ const [searchInput, setSearchInput] = useState('');
             <option value='ascending'> Name Ascending </option>
             <option value='descending'> Name Descending </option>
           </select>
-          <input onChage={handleSearch}/>
         </div>
         <div className='div'/>
         {loading ? (<div className='loader'>
