@@ -22,7 +22,7 @@ function App() {
   const [sorting, setSorting] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage, setPostsPerPage] = useState(18);
-  const [loading, setLoading] = useState(true); 
+  const [loading, setLoading] = useState(true);
   
   useEffect(() => {
     setLoading(true)
@@ -90,7 +90,7 @@ function App() {
   function paginate(pageNum) {
     setCurrentPage(pageNum)
   }
-
+ 
   return (
     <div className="App">
       <header className="App-header">
