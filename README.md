@@ -2,8 +2,10 @@
 
 <a href="https://64c5ae8b74848a33ae03a8a1--occupationdata.netlify.app"> View Occupation Data Site </a>
 
-- Showcases user avatar, name, and occupation from API data.
+- Showcases user avatar, name, occupation from API data & graphs representing revnue data.
+- Graphs expand on click!
 - Can be sorted by name in ascending or descending order.
 - minimalist css design
 
-![opdt](https://github.com/MichelBDLC/user-occupation-data/assets/103394185/fe5cd572-1e26-4763-af2b-24dbd5a9b1cc)
+
+![user occupation data complete](https://github.com/MichelBDLC/user-occupation-data/assets/103394185/934d06aa-b276-461c-ac62-67d981f2fd18)
