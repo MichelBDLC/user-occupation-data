@@ -1,6 +1,6 @@
 # user-occupation-data
 
-<a href="https://64c5ae8b74848a33ae03a8a1--occupationdata.netlify.app"> View Occupation Data Site </a>
+<a href="https://occupationdata.netlify.app/"> View Occupation Data Site </a>
 
 - Showcases user avatar, name, occupation from API data & graphs representing revnue data.
 - Graphs expand on click!
